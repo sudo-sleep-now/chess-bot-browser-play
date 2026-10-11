@@ -1,0 +1,48 @@
+/* The board, setup, and notation share open space instead of nested cards. */
+.minimal-play { display: grid; grid-template-columns: minmax(0, 620px) minmax(240px, 280px); align-items: start; gap: 40px; max-width: 980px; margin: 48px auto; padding: 0 20px; }
+.game-area, .play-options { min-width: 0; }
+.chessboard { border: 0; border-radius: 3px; }
+.play-options h2 { font-size: 15px; font-weight: 550; margin: 0 0 22px; }
+#setup-panel, #moves-panel { min-height: 0; }
+fieldset { margin: 0 0 18px; }
+legend { font-size: 11px; margin-bottom: 10px; }
+.side-options, .search-options { display: flex; gap: 18px; }
+.plain-choice { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; color: var(--muted); }
+.plain-choice input { position: static; opacity: 1; width: 13px; height: 13px; margin: 0; padding: 0; accent-color: var(--accent); }
+.plain-choice span, .search-options span { display: inline; padding: 0; border: 0; border-radius: 0; text-align: left; font-size: 12px; }
+.plain-choice input:checked + span { color: var(--text); }
+.primary-button { margin-top: 24px; min-height: 38px; padding: 9px 14px; }
+#moves-panel { margin-top: 34px; }
+.notation-heading { display: flex; align-items: baseline; justify-content: space-between; }
+.notation-heading h2 { margin: 0; }
+#move-counter { color: var(--muted); font-size: 11px; font-weight: 400; margin-left: 7px; }
+#game-status { margin: 10px 0 14px; color: var(--muted); font-size: 12px; }
+.move-list { height: 210px; border: 0; border-radius: 0; background: transparent; }
+.move-row { height: 31px; grid-template-columns: 30px 1fr 1fr; }
+.move-row:nth-child(even) { background: transparent; }
+.move-row .move-number { padding-left: 0; }
+.move-button { border-radius: 3px; padding: 7px 8px; }
+.move-button.current { background: #78916f25; }
+.empty-moves { padding: 12px 0; text-align: left; }
+.empty-moves p { margin: 0; font-size: 12px; }
+.history-controls { height: 40px; }
+.history-controls .icon-button { padding: 7px 0; min-height: 32px; color: var(--muted); }
+.plain-actions { display: flex; align-items: center; gap: 18px; margin-top: 12px; }
+.plain-actions button { border: 0; background: transparent; padding: 5px 0; font-size: 11px; color: var(--muted); }
+.secondary-actions { margin-top: 8px; }
+.secondary-actions button:last-child { margin-left: auto; }
+@media (hover: hover) and (pointer: fine) { .plain-actions button:hover:not(:disabled), .history-controls button:hover:not(:disabled) { color: var(--text); } }
+@media (max-width: 720px) {
+  .minimal-play { grid-template-columns: minmax(0,1fr); max-width: 540px; margin: 24px auto; padding: 0 16px; gap: 28px; }
+  .play-options { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  #moves-panel { margin-top: 0; }
+  .side-options, .search-options { flex-wrap: wrap; gap: 10px 14px; }
+  .move-list { height: 180px; }
+  .play-error { grid-column: 1/-1; }
+}
+@media (max-width: 420px) {
+  .play-options { grid-template-columns: 1fr; gap: 30px; }
+  .move-list { height: 150px; }
+  .play-options h2 { margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }

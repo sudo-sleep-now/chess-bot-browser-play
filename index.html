@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151b18">
+  <meta name="description" content="Play against a trained neural chess model, running privately on your device in your browser.">
+  <title>Chess Bot · Play locally</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/pieces/white-knight.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./play.css">
+  <link rel="stylesheet" href="./minimal.css">
+  <script type="module" src="./play.js"></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-board" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M8 15l4-5 4 2 5-8"/></symbol>
+    <symbol id="icon-flip" viewBox="0 0 24 24"><path d="M7 20V4m-4 4 4-4 4 4m6-4v16m-4-4 4 4 4-4"/></symbol>
+    <symbol id="icon-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 0 14"/></symbol>
+    <symbol id="icon-flag" viewBox="0 0 24 24"><path d="M5 21V3m0 1c5-4 9 4 15 0v10c-6 4-10-4-15 0"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="icon-end" viewBox="0 0 24 24"><path d="m6 5 7 7-7 7M18 5v14"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="m14 2-9 12h6l-1 8 9-12h-6z"/></symbol>
+  </svg>
+  <header class="site-heading"><a class="site-brand" href="./"><img src="./assets/pieces/white-knight.svg" alt="" width="36" height="36">Chess Bot</a><span class="local-badge">Runs on your device</span></header>
+  <main class="minimal-play">
+    <section class="game-area" aria-label="Chessboard">
+      <div class="board-heading"><h1>Your move.</h1><p>Play against our trained neural chess model.</p></div>
+      <div class="board-wrap">
+        <div class="chessboard" id="play-board" role="grid" aria-label="Chessboard. Use arrow keys to navigate and Enter to select a square." aria-rowcount="8" aria-colcount="8"></div>
+        <div class="board-notice" id="board-notice" hidden><span id="board-notice-text"></span><button id="return-live">Return to game</button></div>
+      </div>
+    </section>
+    <aside class="play-options">
+      <section id="setup-panel" aria-label="New game">
+        <h2>New game</h2>
+        <fieldset><legend>Model</legend><div class="side-options" id="model-options"></div></fieldset>
+        <fieldset><legend>Your side</legend><div class="side-options">
+          <label class="plain-choice"><input type="radio" name="side" value="white" checked><span>White</span></label>
+          <label class="plain-choice"><input type="radio" name="side" value="black"><span>Black</span></label>
+          <label class="plain-choice"><input type="radio" name="side" value="random"><span>Random</span></label>
+        </div></fieldset>
+        <fieldset><legend>Search · simulations per move</legend><div class="search-options">
+          <label class="plain-choice" title="32 simulations per move"><input type="radio" name="search" value="32"><span>32</span></label>
+          <label class="plain-choice" title="64 simulations per move"><input type="radio" name="search" value="64" checked><span>64</span></label>
+          <label class="plain-choice" title="128 simulations per move"><input type="radio" name="search" value="128"><span>128</span></label>
+        </div><div class="search-options">
+          <label class="plain-choice" title="256 simulations per move"><input type="radio" name="search" value="256"><span>256</span></label>
+          <label class="plain-choice" title="512 simulations per move"><input type="radio" name="search" value="512"><span>512</span></label>
+          <label class="plain-choice" title="1,024 simulations per move"><input type="radio" name="search" value="1024"><span>1,024</span></label>
+        </div><div class="search-options">
+          <label class="plain-choice" title="2,048 simulations per move"><input type="radio" name="search" value="2048"><span>2,048</span></label>
+        </div></fieldset>
+        <button class="primary-button" id="start-game" disabled><span>Play</span></button>
+      </section>
+      <section id="moves-panel" aria-label="Move notation">
+        <div class="notation-heading"><h2>Moves <span id="move-counter">0</span></h2><span id="game-search"></span></div>
+        <p id="game-status" role="status" aria-live="polite">Start a game to play</p>
+        <div class="move-list" id="move-list" aria-label="Move history"></div>
+        <div class="history-controls">
+          <button class="icon-button reverse" id="first-move" aria-label="Go to starting position" title="Starting position"><svg><use href="#icon-end"/></svg></button>
+          <button class="icon-button reverse" id="previous-move" aria-label="Previous move" title="Previous move"><svg><use href="#icon-chevron"/></svg></button>
+          <span id="history-position">0 / 0</span>
+          <button class="icon-button" id="next-move" aria-label="Next move" title="Next move"><svg><use href="#icon-chevron"/></svg></button>
+          <button class="icon-button" id="last-move" aria-label="Latest position" title="Latest position"><svg><use href="#icon-end"/></svg></button>
+        </div>
+        <div class="plain-actions"><button id="take-back" disabled>Take back</button><button id="resign-game" disabled>Resign</button><button id="download-pgn" disabled>PGN</button></div>
+        <div class="plain-actions secondary-actions"><button id="flip-board" title="Flip board (F)">Flip board</button><button id="stop-engine" disabled>Stop thinking</button></div>
+      </section>
+      <p class="local-note" id="engine-status" role="status" aria-live="polite">Loading local engine…</p>
+      <p class="local-note">Your moves stay in this browser. No account or installation needed.</p>
+      <div class="play-error" id="play-error" role="alert" hidden><p id="error-message"></p><button id="retry">Try again</button></div>
+    </aside>
+  </main>
+  <dialog id="promotion-dialog" class="game-dialog"><h2>Promote your pawn</h2><p>Choose a piece.</p><div id="promotion-options" class="promotion-options"></div><button class="text-button" id="cancel-promotion">Cancel</button></dialog>
+  <dialog id="resign-dialog" class="game-dialog"><div class="dialog-icon"><svg><use href="#icon-flag"/></svg></div><h2>Resign this game?</h2><p>You can start another game whenever you like.</p><div class="dialog-actions"><button class="secondary-button" id="cancel-resign">Keep playing</button><button class="primary-button" id="confirm-resign">Resign</button></div></dialog>
+  <dialog id="result-dialog" class="game-dialog"><div class="result-piece"><img id="result-piece" src="./assets/pieces/white-king.svg" width="80" height="80" alt=""></div><h2 id="result-title">Game over</h2><p id="result-description"></p><div class="dialog-actions"><button class="secondary-button" id="review-game">Review game</button><button class="primary-button" id="play-again">Play again</button></div></dialog>
+</body>
+</html>

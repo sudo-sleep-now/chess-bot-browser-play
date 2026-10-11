@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>White queen</title>
+  <defs>
+    <linearGradient id="body" x1="22" y1="16" x2="59" y2="69" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff9e7"/><stop offset="1" stop-color="#d9d0b7"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#body)" stroke="#26332b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 37c5 6 5 11-2 19h26c-7-8-7-13-2-19z"/>
+    <path d="M23 40l-5-17 13 10-2-17 11 14 11-14-2 17 13-10-5 17z"/>
+    <path d="M24 40h32v6H24z"/>
+    <g fill="#f5efd9">
+      <circle cx="18" cy="22" r="3.5"/><circle cx="29" cy="15" r="3.5"/>
+      <circle cx="40" cy="10" r="3.5"/><circle cx="51" cy="15" r="3.5"/><circle cx="62" cy="22" r="3.5"/>
+    </g>
+    <path d="M29 43h22M31 54h18" fill="none" stroke="#8d927a" stroke-width="1.7"/>
+
+    <path d="M24 57h32l4 7H20z"/>
+    <path d="M20 64h40l3 7H17z"/>
+    <path d="M25 61h30M22 68h36" fill="none" stroke="#8d927a" stroke-width="1.5"/>
+  </g>
+</svg>

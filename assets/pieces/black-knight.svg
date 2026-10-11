@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>Black knight</title>
+  <defs>
+    <linearGradient id="body" x1="22" y1="16" x2="59" y2="69" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42524a"/><stop offset="1" stop-color="#192720"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#body)" stroke="#111e17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 57c0-11 6-18 15-23l-10 4-12-5c-2-1-2-3 0-5l14-13 1-7 9 7c12-2 20 8 20 21 0 8-4 15-6 21z"/>
+    <path d="M43 20c9 3 12 11 10 21-1 4-3 7-4 10" fill="none" stroke="#809083" stroke-width="2.5"/>
+    <path d="M31 15l7 5M19 29l7 1M30 38l7-4" fill="none"/>
+    <circle cx="34" cy="25" r="2.3" fill="#111e17" stroke="none"/>
+    <path d="M46 24c4 3 6 8 5 13" fill="none" stroke="#9baa96" stroke-width="2"/>
+    <path d="M25 55h29" fill="none"/>
+
+    <path d="M24 57h32l4 7H20z"/>
+    <path d="M20 64h40l3 7H17z"/>
+    <path d="M25 61h30M22 68h36" fill="none" stroke="#809083" stroke-width="1.5"/>
+  </g>
+</svg>

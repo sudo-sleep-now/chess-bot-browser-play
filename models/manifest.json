@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "exported_on": "2026-10-11",
+  "default": "latest",
+  "models": [
+    {
+      "id": "latest",
+      "label": "Latest",
+      "file": "./models/latest.onnx",
+      "iteration": 10232,
+      "training_step": 718627,
+      "history_length": 8,
+      "channels": 64,
+      "residual_blocks": 4,
+      "normalization": "group",
+      "cpuct": 1.5,
+      "bytes": 1634479,
+      "sha256": "1d32be4538a3155448b6bf25d88c6651fe6fdb2786fcb6a07e2e26e7193c9a28",
+      "source_sha256": "40993c29a750ffce38aec3dc763940d9454356f9c27a6e83250b3c662eb0eb2a"
+    },
+    {
+      "id": "champion",
+      "label": "Champion",
+      "file": "./models/champion.onnx",
+      "iteration": 9300,
+      "training_step": 718627,
+      "history_length": 8,
+      "channels": 64,
+      "residual_blocks": 4,
+      "normalization": "group",
+      "cpuct": 1.5,
+      "bytes": 1634479,
+      "sha256": "27fd178790f83e3c100f2d8a8e8b800e8430a31354eda3c8f2cb4f1487f7bd54",
+      "source_sha256": "8ffc1039595d56b15d39c0734ba53221b788de071494a090ee90f1ce7a067843"
+    }
+  ]
+}

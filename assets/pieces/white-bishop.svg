@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>White bishop</title>
+  <defs>
+    <linearGradient id="body" x1="22" y1="16" x2="59" y2="69" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff9e7"/><stop offset="1" stop-color="#d9d0b7"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#body)" stroke="#26332b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 37c1 7-1 13-7 19h26c-6-6-8-12-7-19z"/>
+    <path d="M40 10c-6 7-14 13-14 21 0 7 6 11 14 11s14-4 14-11c0-8-8-14-14-21z"/>
+    <path d="M43 21l-9 11" fill="none" stroke="#26332b" stroke-width="3.2"/>
+    <path d="M30 42h20M29 54h22" fill="none"/>
+    <circle cx="40" cy="10" r="3.5"/>
+    <path d="M31 29c0-3 2-6 4-8" fill="none" stroke="#fffdf2" stroke-width="2"/>
+
+    <path d="M24 57h32l4 7H20z"/>
+    <path d="M20 64h40l3 7H17z"/>
+    <path d="M25 61h30M22 68h36" fill="none" stroke="#8d927a" stroke-width="1.5"/>
+  </g>
+</svg>

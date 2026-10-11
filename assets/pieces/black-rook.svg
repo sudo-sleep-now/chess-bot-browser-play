@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>Black rook</title>
+  <defs>
+    <linearGradient id="body" x1="22" y1="16" x2="59" y2="69" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42524a"/><stop offset="1" stop-color="#192720"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#body)" stroke="#111e17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 28h28l-3 26H29z"/>
+    <path d="M20 12h10v8h5v-8h10v8h5v-8h10v17H20z"/>
+    <path d="M24 29h32v5H24zM27 53h26l3 5H24z"/>
+    <path d="M33 38v11M25 25h30" fill="none" stroke="#9baa96" stroke-width="2"/>
+
+    <path d="M24 57h32l4 7H20z"/>
+    <path d="M20 64h40l3 7H17z"/>
+    <path d="M25 61h30M22 68h36" fill="none" stroke="#809083" stroke-width="1.5"/>
+  </g>
+</svg>
